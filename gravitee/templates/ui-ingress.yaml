@@ -32,7 +32,7 @@ spec:
   {{- range .Values.ui.ingress.tls }}
     - hosts:
       {{- range .hosts }}
-        - {{ . | quote }}
+        - {{ . }}
       {{- end }}
       secretName: {{ .secretName }}
   {{- end }}
