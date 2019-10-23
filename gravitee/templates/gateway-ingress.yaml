@@ -27,14 +27,6 @@ spec:
               serviceName: {{ $serviceGWName }}
               servicePort: {{ $serviceGWPort }}
     {{- end -}}
-{{- if .Values.gateway.ingress.tls }}
   tls:
-  {{- range .Values.gateway.ingress.tls }}
-    - hosts:
-      {{- range .hosts }}
-        - {{ . }}
-      {{- end }}
-      secretName: {{ .secretName }}
-  {{- end }}
-{{- end }}
+{{ toYaml .Values.gateway.ingress.tls | indent 4 }}
 {{- end -}}
