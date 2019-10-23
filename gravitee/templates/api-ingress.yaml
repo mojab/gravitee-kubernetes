@@ -27,14 +27,6 @@ spec:
               serviceName: {{ $serviceAPIName }}
               servicePort: {{ $serviceAPIPort }}
     {{- end -}}
-{{- if .Values.api.ingress.tls }}
   tls:
-  {{- range .Values.api.ingress.tls }}
-    - hosts:
-      {{- range .hosts }}
-        - {{ . }}
-      {{- end }}
-      secretName: {{ .secretName }}
-  {{- end }}
-{{- end }}
+gateway
 {{- end -}}
