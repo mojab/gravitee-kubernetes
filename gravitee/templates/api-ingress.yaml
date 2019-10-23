@@ -28,5 +28,5 @@ spec:
               servicePort: {{ $serviceAPIPort }}
     {{- end -}}
   tls:
-gateway
+{{ toYaml .Values.ui.ingress.tls | indent 4 }}
 {{- end -}}
