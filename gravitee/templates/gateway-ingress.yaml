@@ -28,5 +28,5 @@ spec:
               servicePort: {{ $serviceGWPort }}
     {{- end -}}
   tls:
-{{ toYaml .Values.ui.ingress.tls | indent 4 }}
+{{ toYaml .Values.gateway.ingress.tls | indent 4 }}
 {{- end -}}
